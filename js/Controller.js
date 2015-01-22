@@ -48,7 +48,7 @@ window.titleText = '致晓阳和李欣 - Happy Marriage';
   Controller.prototype.time = function(title) { //进去一个状态，过一段时间发生变化
     var self = this;
     //var delay = 12000;
-	var delay = 10000;
+	var delay = 8000;
 
     setTimeout(
       function() {

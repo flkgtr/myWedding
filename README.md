@@ -1,4 +1,17 @@
 # [Open Wedding](http://openwedding.org/)
+
+Github部署方案
+非常谢谢@zhouningyi大哥开发的`openWedding`，为了更好的方便其他得小伙伴们将起部署到github pages上，还需要做一小点的修改，主要是`GeoTexture.js`和`GlobeScene.js`这两个文件。
+
+-  修改一：`GeoTexture.js`的修改视你建立得pages是在master下还是在gh-pages下，如果是建立在master，则46行`var bgURL = '../data/world1.png;'不需要变动，如果是建立在gh-pages下，则改为`../data/world1.png;`，即保持在当前目录下，不用返回到上一级根目录。
+
+- 修改二：`GlobeScene.js`中在切分`dictionary.js`中得url时，如果不做修改直接部署到github上后你会发现浏览器中对于切分url的编码方式不对，我做了一个简单得修改，就是用在196行`info = info.split('|');`和205行`var lng = parseFloat(infos.split('|')[1]);`以及206行`var lat = parseFloat(infos.split('|')[2]);`中的“|”用“_”代替即可。
+
+修改完上面的，即可完全复现本来的样子了。这里还要注意得是：由于二中的修改，所以`dictionary.js`的urls格式跟原来的有点小变动，具体的可以参考我已经部署好了例子中的[dictionary.js](https://github.com/ourweddings/yang/blob/gh-pages/data/dictionary.js)。
+
+另外，如果你的照片不是很多的话，其实手动写`dictionary.js`的内容也是可以的，比如我就是直接手动写的。
+
+
 ### openwedding.org    
 ##### 简单、开源、易用的结婚视频生成模版  文件夹－>交互版结婚创意网页
 ##### 将制作求婚、婚礼所用的视频，改成html5交互版，内容和功能不断更新
